@@ -13,10 +13,8 @@ class GetStartedP extends StatelessWidget {
     return Scaffold(
         body: CustomBackGroundImg(
       child: Column(children: [
+        SizedBox(height: AppSizes.bar),
         Image.asset(AppAssets.ImgBG2),
-        const SizedBox(
-          height: AppSizes.Bg,
-        ),
         const MyWidget(),
         const SizedBox(height: AppSizes.BetweenButton),
         CostomButton(

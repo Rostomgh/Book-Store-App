@@ -1,4 +1,5 @@
 import 'package:book_store/core/Router/OngenerateRoute.dart';
+import 'package:book_store/core/Ui/Animation/Logoo.dart';
 import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
+      home: const LogoP(),
       onGenerateRoute: (settings) => Approuter().onGenerateRoute(settings),
     
     );

@@ -1,8 +1,9 @@
 class AppSizes {
   AppSizes._();
 
-  static const double sizecardes = 40;
-  static const double htext = 11;
-  static const double Bg = 0.60;
-  static const double BetweenButton = 140;
+  static const double sizecardes = 25;
+  static const double htext = 4;
+
+  static const double BetweenButton = 80;
+  static const double bar = 60;
 }
