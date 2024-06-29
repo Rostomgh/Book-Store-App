@@ -1,7 +1,7 @@
 import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:book_store/features/GetStartedScreen/Widget/BuildCards.dart';
-import 'package:book_store/features/GetStartedScreen/Widget/CustomBackgroundImage.dart';
+import 'package:book_store/core/Ui/Widget/CustomBackgroundImage.dart';
 import 'package:book_store/features/GetStartedScreen/Widget/CustomButton.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,9 @@ class GetStartedP extends StatelessWidget {
         const MyWidget(),
         const SizedBox(height: AppSizes.BetweenButton),
         CostomButton(
-          onpress: () {},
+          onpress: () {
+            Navigator.pushNamed(context, 'home');
+          },
         )
       ]),
     ));

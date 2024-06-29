@@ -6,4 +6,6 @@ class AppSizes {
 
   static const double BetweenButton = 80;
   static const double bar = 60;
+  static const double htC = 256;
+  static const double wdC = 152;
 }

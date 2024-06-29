@@ -19,8 +19,8 @@ class _LogoPState extends State<LogoP> {
           splashTransition: SplashTransition.fadeTransition,
           splash: Image.asset(
             AppAssets.logo,
-            width: 300,
-            height: 300,
+            width: 500,
+            height:500,
           ),
           nextScreen: const GetStartedP(),
         ),
