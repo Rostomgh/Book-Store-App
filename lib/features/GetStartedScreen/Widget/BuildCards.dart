@@ -26,7 +26,8 @@ class MyWidget extends StatelessWidget {
           style: TextStyle(
             color: AppColor.textColor,
             fontSize: 18,
-            fontWeight: FontWeight.w400
+            fontWeight: FontWeight.w400,
+            fontFamily: "IbarraRealNova"
           ),
         )
       ],
