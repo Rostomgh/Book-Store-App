@@ -1,3 +1,4 @@
+import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackGroundImg extends StatelessWidget {
@@ -11,7 +12,7 @@ class CustomBackGroundImg extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(('assets/BG/backg.png')),
+            image: AssetImage((AppAssets.ImgBG)),
             fit: BoxFit.cover,
           ),
         ),

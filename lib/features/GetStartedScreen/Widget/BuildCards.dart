@@ -1,3 +1,4 @@
+import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/allast.png'),
+        Image.asset(AppAssets.all),
         const SizedBox(
           height: AppSizes.sizecardes,
         ),

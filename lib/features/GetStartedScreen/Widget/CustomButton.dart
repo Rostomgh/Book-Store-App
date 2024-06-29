@@ -2,8 +2,8 @@ import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:flutter/material.dart';
 
 class CostomButton extends StatelessWidget {
-  final void Function()? onpress;
-  const CostomButton({super.key, this.onpress});
+  final void Function() onpress;
+  const CostomButton({super.key, required this.onpress});
 
   @override
   Widget build(BuildContext context) {

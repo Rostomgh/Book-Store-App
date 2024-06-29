@@ -1,4 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:book_store/core/Theme/AppAssets.dart';
+import 'package:book_store/features/GetStartedScreen/GetStartedScreen.dart';
 import 'package:flutter/material.dart';
 
 class LogoP extends StatefulWidget {
@@ -16,11 +18,11 @@ class _LogoPState extends State<LogoP> {
         child: AnimatedSplashScreen(
           splashTransition: SplashTransition.fadeTransition,
           splash: Image.asset(
-            'assets/Logo/logo.jpg',
+            AppAssets.logo,
             width: 300,
             height: 300,
           ),
-          nextScreen: const LogoP(),
+          nextScreen: const GetStartedP(),
         ),
       ),
     );
