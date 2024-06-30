@@ -1,8 +1,9 @@
 import 'package:book_store/core/Theme/AppAssets.dart';
+import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:book_store/features/GetStartedScreen/Widget/BuildCards.dart';
 import 'package:book_store/core/Ui/Widget/CustomBackgroundImage.dart';
-import 'package:book_store/features/GetStartedScreen/Widget/CustomButton.dart';
+import 'package:book_store/core/Ui/Widget/CustomButton.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedP extends StatelessWidget {
@@ -11,18 +12,27 @@ class GetStartedP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomBackGroundImg(
-      child: Column(children: [
-        SizedBox(height: AppSizes.bar),
-        Image.asset(AppAssets.ImgBG2),
-        const MyWidget(),
-        const SizedBox(height: AppSizes.BetweenButton),
-        CostomButton(
-          onpress: () {
-            Navigator.pushNamed(context, 'home');
-          },
-        )
-      ]),
-    ));
+      body: CustomBackGroundImg(
+        child: Column(
+          children: [
+            const SizedBox(height: AppSizes.bar),
+            Image.asset(AppAssets.ImgBG2),
+            const MyWidget(),
+            const SizedBox(height: AppSizes.BetweenButton),
+            CustomButton(
+              text: 'GET STARTED',
+              style: const TextStyle(
+                color: AppColor.white, 
+                fontWeight: FontWeight.bold, 
+                fontSize: 20,
+              ),
+              onpress: () {
+                Navigator.pushNamed(context, 'home');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

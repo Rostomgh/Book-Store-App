@@ -8,4 +8,6 @@ class AppSizes {
   static const double bar = 60;
   static const double htC = 256;
   static const double wdC = 152;
+  static const double gtext = 16;
+  static const double hpic = 428;
 }
