@@ -21,13 +21,9 @@ class GetStartedP extends StatelessWidget {
             const SizedBox(height: AppSizes.BetweenButton),
             CustomButton(
               text: 'GET STARTED',
-              style: const TextStyle(
-                color: AppColor.white, 
-                fontWeight: FontWeight.bold, 
-                fontSize: 20,
-              ),
+            
               onpress: () {
-                Navigator.pushNamed(context, 'home');
+                Navigator.pushNamed(context, '/get');
               },
             ),
           ],

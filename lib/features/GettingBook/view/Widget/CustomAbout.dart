@@ -10,8 +10,10 @@ class CustomAbout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Column(children: [
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
         const Text('About the Book',
             style: TextStyle(
                 fontSize: 14,
