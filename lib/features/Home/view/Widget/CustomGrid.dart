@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
 class CustomGrid extends StatelessWidget {
-  const CustomGrid({super.key});
+  final String ImgN;
+  const CustomGrid({super.key, required this.ImgN});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +16,17 @@ class CustomGrid extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: Colors.orange,
+              color: Colors.red,
             ),
             height: AppSizes.htC,
             width: AppSizes.wdC,
-            alignment: Alignment.center,
-            
-            child: const Text("xs : 6 \r\nmd : 3"),
-          ),
-        ),
+          
+            child:  Column(
+              children: [
+                Image.asset(imgN)
+              ]
+            )
+        )),
         // You can add more columns here
       ],
     );
