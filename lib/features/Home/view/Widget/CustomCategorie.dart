@@ -11,24 +11,23 @@ class CustomCategorie extends StatelessWidget {
       width: 141,
       height: 36,
       decoration: BoxDecoration(
-        color: AppColor.backgroundCategory,
-        borderRadius: BorderRadius.circular(32),
-        border: Border.all(
-          color: AppColor.textColor,
-          width: 1.0,
-        )
-      ),
-      child:  Text(
+          color: AppColor.backgroundCategory,
+          borderRadius: BorderRadius.circular(32),
+          border: Border.all(
+            color: AppColor.textColor,
+            width: 1.0,
+          )),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text(
           Category,
           style: const TextStyle(
-            fontSize: 16, 
+            fontSize: 16,
             color: AppColor.textColor,
             fontFamily: 'IbarraRealNova',
           ),
-
-        
+        ),
       ),
-
     );
   }
 }
