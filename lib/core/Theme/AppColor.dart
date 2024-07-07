@@ -7,5 +7,6 @@ class AppColor {
   static const Color ButColor=Color(0xFFD23402);
   static const Color white= Color(0xFFFFFFFF);
   static const Color containe=Color(0xFFFFFBF1);
+  static const Color backgroundCategory=Color(0xFFDBC6B4);
 
 }
