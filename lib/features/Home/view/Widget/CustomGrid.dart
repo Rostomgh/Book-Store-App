@@ -20,13 +20,18 @@ class CustomGrid extends StatelessWidget {
             ),
             height: AppSizes.htC,
             width: AppSizes.wdC,
-          
-            child:  Column(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Image.asset(imgN)
-              ]
-            )
-        )),
+                Image.asset(ImgN, fit: BoxFit.cover),
+                const SizedBox(
+                  height: AppSizes.htext,
+                ),
+                const Icon(Icons.favorite)
+              ],
+            ),
+          ),
+        ),
         // You can add more columns here
       ],
     );
