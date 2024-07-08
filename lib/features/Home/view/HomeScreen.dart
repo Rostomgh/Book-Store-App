@@ -1,4 +1,3 @@
-
 import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
@@ -19,26 +18,35 @@ class _HomePState extends State<HomeP> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-
-      body:SingleChildScrollView(
-        child: CustomBackGroundImg(
-          child: Column(
-            children: [
-              CustomSearchBar(),
-              SizedBox(height: AppSizes.LR),
-              CustomCategorie(Category: 'Fiction',),
-              SizedBox(height: AppSizes.hsearch),
-              Text('Hand-picked for you',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'IbarraRealNova',color: AppColor.textColor),),
-              SizedBox(height: AppSizes.grid,),
-              CustomGrid(ImgN: AppAssets.Bookimg,),
-              SizedBox(height: AppSizes.LR),
-              
-
-            ],
-          ),
+        body: SingleChildScrollView(
+      child: CustomBackGroundImg(
+        child: Column(
+          children: [
+            CustomSearchBar(),
+            SizedBox(height: AppSizes.LR),
+            CustomCategorie(
+              Category: 'Fiction',
+            ),
+            SizedBox(height: AppSizes.hsearch),
+            Text(
+              'Hand-picked for you',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'IbarraRealNova',
+                  color: AppColor.textColor),
+            ),
+            SizedBox(
+              height: AppSizes.grid,
+            ),
+            CustomGrid(
+              ImgN: AppAssets.Bookimg,
+            ),
+            SizedBox(height: AppSizes.LR),
+            
+          ],
         ),
-      )
-
-    );
+      ),
+    ));
   }
 }
