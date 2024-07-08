@@ -1,7 +1,10 @@
 
+import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:book_store/core/Ui/Widget/CustomBackgroundImage.dart';
+import 'package:book_store/features/Home/view/Widget/CustomCategorie.dart';
+import 'package:book_store/features/Home/view/Widget/CustomGrid.dart';
 import 'package:book_store/features/Home/view/Widget/CustomSearchBar.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +25,15 @@ class _HomePState extends State<HomeP> {
           child: Column(
             children: [
               CustomSearchBar(),
+              SizedBox(height: AppSizes.LR),
+              CustomCategorie(Category: 'Fiction',),
               SizedBox(height: AppSizes.hsearch),
-              Text('Hand-picked for you',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'IbarraRealNova',color: AppColor.textColor),)
+              Text('Hand-picked for you',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'IbarraRealNova',color: AppColor.textColor),),
+              SizedBox(height: AppSizes.grid,),
+              CustomGrid(ImgN: AppAssets.Bookimg,),
+              SizedBox(height: AppSizes.LR),
+              
+
             ],
           ),
         ),

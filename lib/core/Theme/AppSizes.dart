@@ -13,4 +13,5 @@ class AppSizes {
   static const double LR = 30;
   static const double Bt2 = 15;
   static const double hsearch = 98;
+  static const double grid = 18;
 }
