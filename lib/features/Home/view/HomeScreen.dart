@@ -22,12 +22,12 @@ class _HomePState extends State<HomeP> {
       child: CustomBackGroundImg(
         child: Column(
           children: [
-            CustomSearchBar(),
-            SizedBox(height: AppSizes.LR),
-            CustomCategorie(
+          //CustomSearchBar(),
+            //SizedBox(height: AppSizes.LR),
+            /*CustomCategorie(
               Category: 'Fiction',
-            ),
-            SizedBox(height: AppSizes.hsearch),
+            ),*/
+            //SizedBox(height: AppSizes.hsearch),
             Text(
               'Hand-picked for you',
               style: TextStyle(

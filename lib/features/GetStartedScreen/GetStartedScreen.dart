@@ -23,7 +23,7 @@ class GetStartedP extends StatelessWidget {
               text: 'GET STARTED',
             
               onpress: () {
-                Navigator.pushNamed(context, '/get');
+                Navigator.pushNamed(context, 'home');
               },
             ),
           ],

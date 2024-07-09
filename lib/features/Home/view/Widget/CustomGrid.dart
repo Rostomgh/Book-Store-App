@@ -4,36 +4,43 @@ import 'package:responsive_grid/responsive_grid.dart';
 
 class CustomGrid extends StatelessWidget {
   final String ImgN;
-  const CustomGrid({super.key, required this.ImgN});
+  final Function()? tap;
+  const CustomGrid({super.key, required this.ImgN, this.tap});
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveGridRow(
-      children: [
-        ResponsiveGridCol(
-          xs: 6,
-          md: 3,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.red,
-            ),
-            height: AppSizes.htC,
-            width: AppSizes.wdC,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Image.asset(ImgN, fit: BoxFit.cover),
-                const SizedBox(
-                  height: AppSizes.htext,
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: InkWell(
+        onTap: tap,
+        child: ResponsiveGridRow(
+          children: [
+            ResponsiveGridCol(
+              xs: 12,
+              
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.red,
                 ),
-                const Icon(Icons.favorite)
-              ],
+                height: AppSizes.htC,
+                width: AppSizes.wdC,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Image.asset(ImgN, fit: BoxFit.cover),
+                    const SizedBox(
+                      height: AppSizes.htext,
+                    ),
+                    const Icon(Icons.favorite)
+                  ],
+                ),
+              ),
             ),
-          ),
+            // You can add more columns here
+          ],
         ),
-        // You can add more columns here
-      ],
+      ),
     );
   }
 }
