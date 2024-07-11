@@ -2,7 +2,6 @@ import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:book_store/core/Ui/Widget/CustomBackgroundImage.dart';
-import 'package:book_store/features/Home/view/Widget/CustomCategorie.dart';
 import 'package:book_store/features/Home/view/Widget/CustomGrid.dart';
 import 'package:book_store/features/Home/view/Widget/CustomSearchBar.dart';
 import 'package:flutter/material.dart';
@@ -17,18 +16,18 @@ class HomeP extends StatefulWidget {
 class _HomePState extends State<HomeP> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: SingleChildScrollView(
-      child: CustomBackGroundImg(
+    return Scaffold(
+      body: CustomBackGroundImg(
         child: Column(
           children: [
-          //CustomSearchBar(),
+            SizedBox(height: AppSizes.bar),
+            CustomSearchBar(),
             //SizedBox(height: AppSizes.LR),
             /*CustomCategorie(
               Category: 'Fiction',
             ),*/
-            //SizedBox(height: AppSizes.hsearch),
-            Text(
+            SizedBox(height: AppSizes.hsearch),
+            const Text(
               'Hand-picked for you',
               style: TextStyle(
                   fontSize: 20,
@@ -36,17 +35,19 @@ class _HomePState extends State<HomeP> {
                   fontFamily: 'IbarraRealNova',
                   color: AppColor.textColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: AppSizes.grid,
             ),
             CustomGrid(
+              tap: () {
+                Navigator.pushNamed(context, '/get');
+              },
               ImgN: AppAssets.Bookimg,
             ),
-            SizedBox(height: AppSizes.LR),
-            
+            const SizedBox(height: AppSizes.LR),
           ],
         ),
       ),
-    ));
+    );
   }
 }

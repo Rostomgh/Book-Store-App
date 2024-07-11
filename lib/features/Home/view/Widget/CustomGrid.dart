@@ -1,3 +1,4 @@
+import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -16,23 +17,26 @@ class CustomGrid extends StatelessWidget {
         child: ResponsiveGridRow(
           children: [
             ResponsiveGridCol(
-              xs: 12,
-              
+              xs: 6,
               child: Container(
+                height: AppSizes.htC,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.red,
                 ),
-                height: AppSizes.htC,
-                width: AppSizes.wdC,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  //crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Image.asset(ImgN, fit: BoxFit.cover),
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Image.asset(ImgN, fit: BoxFit.cover,width: 140,height: 214,  ),
+                    ),
                     const SizedBox(
                       height: AppSizes.htext,
+                      
                     ),
-                    const Icon(Icons.favorite)
+                    const Icon(Icons.favorite_outline,color: AppColor.white,)
                   ],
                 ),
               ),
