@@ -14,10 +14,16 @@ class GetDataImpl implements GetDataService {
     final response = await apiService.get(endpoint: Endpoint.getbook);
     List<Book> books = [];
     if (response.statusCode == 200) {
-      for (var item in response.data['data']) {
-        books.add(Book.fromJson(item));
+      try {
+        for (var item in response.data['data']) {
+          books.add(Book.fromJson(item));
+        }
+        print('all corrr');
+      } catch (e) {
+        print(e);
       }
     }
+
     return books;
   }
 }

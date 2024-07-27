@@ -2,8 +2,8 @@ import 'package:book_store/core/Theme/AppAssets.dart';
 import 'package:book_store/core/Theme/AppColor.dart';
 import 'package:book_store/core/Theme/AppSizes.dart';
 import 'package:book_store/core/Ui/Widget/CustomBackgroundImage.dart';
-import 'package:book_store/features/Home/view/Widget/CustomGrid.dart';
-import 'package:book_store/features/Home/view/Widget/CustomSearchBar.dart';
+import 'package:book_store/features/Home/presentation/view/Widget/CustomGrid.dart';
+import 'package:book_store/features/Home/presentation/view/Widget/CustomSearchBar.dart';
 import 'package:flutter/material.dart';
 
 class HomeP extends StatefulWidget {

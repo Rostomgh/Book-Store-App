@@ -2,7 +2,7 @@ import 'package:book_store/core/Router/ErrorRoute.dart';
 import 'package:book_store/core/Ui/Animation/Logoo.dart';
 import 'package:book_store/features/GetStartedScreen/GetStartedScreen.dart';
 import 'package:book_store/features/GettingBook/view/GetBook.dart';
-import 'package:book_store/features/Home/view/HomeScreen.dart';
+import 'package:book_store/features/Home/presentation/view/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class Approuter {
