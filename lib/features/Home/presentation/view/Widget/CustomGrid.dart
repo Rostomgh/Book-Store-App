@@ -5,8 +5,17 @@ import 'package:responsive_grid/responsive_grid.dart';
 
 class CustomGrid extends StatelessWidget {
   final String ImgN;
+  final String title;
+  final String author;
   final Function()? tap;
-  const CustomGrid({super.key, required this.ImgN, this.tap});
+
+  const CustomGrid({
+    super.key,
+    required this.ImgN,
+    required this.title,
+    required this.author,
+    this.tap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +35,40 @@ class CustomGrid extends StatelessWidget {
                   color: Colors.red,
                 ),
                 child: Column(
-                  //crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(6.0),
-                      child: Image.asset(ImgN, fit: BoxFit.cover,width: 140,height: 214,  ),
+                      child: Image.asset(
+                        ImgN,
+                        fit: BoxFit.cover,
+                        width: 140,
+                        height: 214,
+                      ),
                     ),
-                    const SizedBox(
-                      height: AppSizes.htext,
-                      
+                    const SizedBox(height: AppSizes.htext),
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: AppColor.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    const Icon(Icons.favorite_outline,color: AppColor.white,)
+                    Text(
+                      author,
+                      style: const TextStyle(
+                        color: AppColor.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                    const Icon(
+                      Icons.favorite_outline,
+                      color: AppColor.white,
+                    ),
                   ],
                 ),
               ),
             ),
-            // You can add more columns here
           ],
         ),
       ),

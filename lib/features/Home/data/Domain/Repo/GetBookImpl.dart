@@ -11,19 +11,19 @@ class GetDataImpl implements GetDataService {
   GetDataImpl({required this.apiService});
   @override
   Future<List<Book>> getBooks() async {
-    final response = await apiService.get(endpoint: Endpoint.getbook);
     List<Book> books = [];
-    if (response.statusCode == 200) {
-      try {
+    try {
+      final response = await apiService.get(endpoint: Endpoint.getbook);
+
+      if (response.statusCode == 200) {
         for (var item in response.data['data']) {
           books.add(Book.fromJson(item));
         }
         print('all corrr');
-      } catch (e) {
-        print(e);
       }
+    } catch (e) {
+      print(e);
     }
-
     return books;
   }
 }
