@@ -28,52 +28,60 @@ class _HomePState extends State<HomeP> {
     return Scaffold(
       body: CustomBackGroundImg(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: AppSizes.bar),
             const CustomSearchBar(),
             const SizedBox(height: AppSizes.hsearch),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Hand-picked for you',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'IbarraRealNova',
-                    color: AppColor.textColor),
-              ),
+            const Text(
+              'Hand-picked for you',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'IbarraRealNova',
+                  color: AppColor.textColor),
             ),
             const SizedBox(
               height: AppSizes.grid,
             ),
-            BlocBuilder<GetBookBloc, GetBookState>(
-              builder: (context, state) {
-                if (state is GetBookLoding) {
-                  return const Center(child: CircularProgressIndicator());
-                } else if (state is GetBookSuccess) {
-                  return Expanded(
-                    child: ListView.builder(
-                      itemCount: state.books.length,
-                      itemBuilder: (context, index) {
-                        final book = state.books[index];
-                        return CustomGrid(
-                          tap: () {
-                            Navigator.pushNamed(context, '/get');
-                          },
-                          ImgN: AppAssets.Bookimg,
-                          title: book.name,
-                          author: book.author,
-                        );
-                      },
+            BlocListener<GetBookBloc, GetBookState>(
+              listener: (context, state) {
+                if (state is GetBookError) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error: ${state.error}'),
+                      backgroundColor: Colors.red,
                     ),
                   );
-                } else if (state is GetBookError) {
-                  return Center(child: Text('Error: ${state.error}'));
-                } else {
-                  return const Center(child: Text('No books found'));
                 }
               },
+              child: BlocBuilder<GetBookBloc, GetBookState>(
+                builder: (context, state) {
+                  if (state is GetBookLoding) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is GetBookSuccess) {
+                    return Expanded(
+                      child: ListView.builder(
+                        itemCount: state.books.length,
+                        itemBuilder: (context, index) {
+                          final book = state.books[index];
+                          return CustomGrid(
+                            tap: () {
+                              Navigator.pushNamed(context, '/get');
+                            },
+                            ImgN: AppAssets.Bookimg,
+                            title: book.name,
+                            author: book.author,
+                          );
+                        },
+                      ),
+                    );
+                  } else if (state is GetBookError) {
+                    return Center(child: Text('Error: ${state.error}'));
+                  } else {
+                    return const Center(child: Text('No books found'));
+                  }
+                },
+              ),
             ),
             const SizedBox(height: AppSizes.LR),
           ],

@@ -1,3 +1,5 @@
+import 'package:book_store/core/Service/ApiError.dart';
+import 'package:book_store/core/Service/EndPoint.dart';
 import 'package:dio/dio.dart';
 
 class DioHelper {
@@ -5,7 +7,7 @@ class DioHelper {
   
     static init() {
     dio = Dio(BaseOptions(
-      baseUrl: 'https://api.medi-dos.com/api/',
+      baseUrl: Endpoint.BaseUrl,
       connectTimeout: const Duration(seconds: 60),
       receiveTimeout: const Duration(seconds: 60),
       receiveDataWhenStatusError: true,

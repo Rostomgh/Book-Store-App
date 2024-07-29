@@ -14,7 +14,6 @@ class GetBookBloc extends Bloc<GetBookEvent, GetBookState> {
   }
 
   Future<void> _onGetBook(GetBook event, Emitter<GetBookState> emit) async {
-    List <Book> books = [];
     emit(GetBookLoding());
     try {
       final books = await getDataImpl.getBooks();
